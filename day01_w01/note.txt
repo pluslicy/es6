@@ -1,0 +1,39 @@
+1. babel使用
+    1)安装babel
+        npm install -g babel-cli
+    2)设定转换规则
+        npm install --save-dev babel-preset-latest
+
+        npm install --save-dev babel-preset-env
+        npm install --save-dev babel-preset-es2015
+        npm install --save-dev babel-preset-react
+    3)编写配置文件
+        .babelrc    
+        放置到项目的根目录
+        {
+            "presets":["latest"]            
+        }
+    4)开始使用babel进行代码的转换
+        0. ES6代码编写
+            let arr = ["terry","larry"];
+            arr.forEach((item,index)=>{
+                console.log(index,item);
+            });
+        1. babel转换
+            babel hello.js
+            直接将转换后的结果打印到控制台上
+2. 本地使用babel
+    1)　本地安装babel-cli,babel-preset-latest
+        $ npm install babel-cli --save-dev
+        $ npm install babel-preset-latest --save-dev
+    2) 添加配置文件.babelrc
+        {
+            "presets":["latest"]
+        }
+    3) 修改package.json文件
+        "scripts":{
+            //...,
+            "build":"babel src --out-dir dist"
+        }
+    4) 使用
+        npm run build
