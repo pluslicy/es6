@@ -1,0 +1,128 @@
+1. git使用
+    git --version
+
+    express app
+    cd app
+    git init    //.git 
+    git add *   //将所有文件交给git来管理
+    git commit -m ''    //提交，每次提交都会产生一个唯一的版本号
+
+    修改文件
+    git　add *   
+    git commit -m ''
+    ...
+
+    git log 
+    git reset --hard 版本号
+    git reflog
+    git reset --hard 版本号
+
+    git branch  //查看当前分支
+    git branch dev
+    git checkout dev    //切换分支
+    
+    git add *
+    git commit -m ''
+    ...
+
+    git checkout master
+    git merge dev   //将ｄｅｖ分支合并到ｍａｓｔｅｒ分支上
+
+    github.com  公共的git仓库
+
+1. 远程仓库
+    1) 与远程仓库绑定
+        git remote add origin 远程地址
+    2) 从远程仓库中更新内容
+        git pull origin master
+    3) 在本地提交
+        git add *
+        git commit -m ''
+    4) 提交
+        git push origin master
+2. 多人协作
+    项目经理上传项目框架，
+        git push origin master
+    项目组成员下载项目框架，
+        git clone 远程git仓库地址
+    然后进行开发，
+
+    然后进行提交
+3. es6
+    也被成为ECMAScript2015
+    转换工具babel
+        es6->es5
+    1) 全局安装babel-cli(命令行中直接使用)
+        $ npm install babel-cli -g
+        $ babel --version
+    2) 本地安装babel预设（转换规则）
+        babel-preset-latest
+        babel-preset-es2015
+        babel-preset-env
+        babel-preset-react
+
+        $ npm install babel-preset-latest
+    3) 编写配置信息
+        .babelrc 防止在项目根目录中
+        {
+            "presets":["latest"]
+        }
+    4) 使用babel进行转码
+        1. 编写es6的代码
+        2. 使用babel进行转码
+            只能转码新语法，无法转码新功能
+            let a = 3;
+            Array.from();
+
+            babel hello.js --out-file out.js
+            或
+            babel src --out-dir dist
+        3. 运行转码后的文件
+4. babel的本地使用
+    1) 本地安装babel-cli (相机)
+        $ npm install --save-dev babel-cli
+    2) 本地安装babel-preset-latest（镜头）
+        $ npm install --save-dev babel-preset-latest
+    3) 添加配置信息（指定镜头）
+        .babelrc
+        {
+            "presets":["latest"]
+        }
+    4)　在package.json中添加脚本(自动聚焦)
+        {
+            "scripts":{
+                //"dev":"",
+                "build":"babel src --out-dir dist"
+            }
+        }
+    5) 执行转换（拍照）
+        $ npm run build
+5. 变量
+    1)let
+        与var 相比
+        1. 不允许重复声明
+        2. 没有变量提升
+        3. 具有局部作用域（块级作用域）
+    2)const
+        具有let所有特性
+        1. 必须显式初始化
+        2. 不能二次赋值（只读）
+6. 解构
+    var a = 3;
+    var b = {name:'terry',age:123};
+    一个表达式可以完成多个变量的赋值操作
+    所谓解构就是模式匹配
+    1)　数组解构
+        es5:
+        var arr = ['terry','larry','tom'];
+        var a = arr[0];
+        var b = arr[1];
+        var c = arr[2];
+
+        =>
+        es6:
+        let[a,b,c] = arr;
+
+    
+
+    
