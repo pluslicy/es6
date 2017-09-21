@@ -1,0 +1,11 @@
+预备模块
+    1. 先启动sinopia
+        $ sinopia
+    2. 全局安装babel-cli
+        $ npm install -g babel-cli
+    3. 本地安装babel-preset-latest
+        $ cd ~
+        $ mkdir npm
+        $ cd npm
+        $ npm install --save-dev babel-preset-latest 
+    
